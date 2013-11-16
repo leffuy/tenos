@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MoxieMeet</string>
+    <string name="app_description">Sample Application</string>
+    <string name="activity_splash_title">MoxieMeet</string>
+    <string name="activity_splash_subtitle">Sample AR Application</string>
+    <string name="about_title">About</string>
+    <string name="about_text"> Proof of concept for an augmented reality meeting room locator.</string>
+    <string name="button_start">Start</string>
+    <string name="button_more_info">More Info</string>
+    <string name="content_desc_vuforia_logo">Logo</string>
+    <string name="content_desc_map">2D Map</string>
+    <string name="content_desc_vuforia_background">Background</string>
+    <string name="login_title">Login</string>
+    <string name="login_user">Username</string>
+    <string name="login_pass">Password</string>
+    <string name="login_button">Submit</string>
+    <string name="menu_flash_on">Flash On</string>
+    <string name="menu_flash_off">Flash Off</string>
+    <string name="menu_contAutofocus_on">Cont. Autofocus On</string>
+    <string name="menu_contAutofocus_off">Cont. Autofocus Off</string>
+    <string name="menu_switch_to_tarmac">Switch to Tarmac</string>
+    <string name="menu_switch_to_stone_chips">Switch to Stones &amp; Chips</string>
+    <string name="menu_camera_title">Options</string>
+
+</resources>

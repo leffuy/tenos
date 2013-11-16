@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tiled_background"
+    android:contentDescription="@string/content_desc_vuforia_background" >
+
+    <TextView
+        android:id="@+id/activity_splash_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:layout_toLeftOf="@+id/vuforia_logo"
+        android:text="@string/activity_splash_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/splash_title"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/vuforia_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:contentDescription="@string/content_desc_vuforia_logo"
+        android:scaleType="fitEnd"
+        android:src="@drawable/moxie_logo_full" />
+
+    <TextView
+        android:id="@+id/splash_screen_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/vuforia_logo"
+        android:layout_marginLeft="44dp"
+        android:text="@string/activity_splash_subtitle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/splash_subtitle" />
+
+    <ImageView
+        android:id="@+id/moxie_logo"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/content_desc_vuforia_logo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/moxie_logo" />
+
+</RelativeLayout>
