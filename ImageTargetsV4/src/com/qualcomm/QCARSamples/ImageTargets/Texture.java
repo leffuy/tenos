@@ -54,7 +54,7 @@ public class Texture
             // Convert:
             byte[] dataBytes = new byte[bitMap.getWidth() *
                                        bitMap.getHeight() * 4];
-            for (int p = 0; p < bitMap.getWidth() * bitMap.getHeight(); ++p)
+            for (int p = 0; p < bitMap.getWidth() * bitMap.getHeight(); p++)
             {
                 int colour = data[p];
                 dataBytes[p * 4]        = (byte)(colour >>> 16);    // R
@@ -87,7 +87,7 @@ public class Texture
         // Convert:
         byte[] dataBytes = new byte[bitMap.getWidth() *
                                    bitMap.getHeight() * 4];
-        for (int p = 0; p &lt; bitMap.getWidth() * bitMap.getHeight(); ++p)
+        for (int p = 0; p < bitMap.getWidth() * bitMap.getHeight(); ++p)
         {
             int colour = data[p];
             dataBytes[p * 4]        = (byte)(colour >>> 16);    // R

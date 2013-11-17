@@ -25,6 +25,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -387,8 +389,7 @@ public class ImageTargets extends Activity
     use for rendering. */
     private void loadTextures()
     {
-        Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);
-        Glyphs glyphs = new Glyphs(bitmap);
+        Bitmap bitmap = Bitmap.createBitmap(200, 200, Config.ARGB_8888);
         mTextures.add(Texture.loadTextureFromApk("test.png",
                                                  getAssets()));
         mTextures.add(Texture.loadTextureFromApk("test2.png",
