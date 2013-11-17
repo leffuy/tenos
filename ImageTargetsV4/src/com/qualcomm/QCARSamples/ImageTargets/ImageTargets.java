@@ -387,6 +387,8 @@ public class ImageTargets extends Activity
     use for rendering. */
     private void loadTextures()
     {
+        Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);
+        Glyphs glyphs = new Glyphs(bitmap);
         mTextures.add(Texture.loadTextureFromApk("test.png",
                                                  getAssets()));
         mTextures.add(Texture.loadTextureFromApk("test2.png",
