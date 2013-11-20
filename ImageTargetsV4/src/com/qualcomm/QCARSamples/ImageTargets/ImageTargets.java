@@ -127,7 +127,12 @@ public class ImageTargets extends Activity
     public Button infoButton;
 
     private RelativeLayout mUILayout;
-
+    
+    
+    //more texture shit for drawing text
+    Canvas text_canvas = null;
+    Bitmap text_bitmap = null;
+    Glyphs glyphin     = null;
     /** Static initializer block to load native libraries on start-up. */
     static
     {
@@ -389,10 +394,18 @@ public class ImageTargets extends Activity
     use for rendering. */
     private void loadTextures()
     {
-        Bitmap bitmap = Bitmap.createBitmap(200, 200, Config.ARGB_8888);
-        mTextures.add(Texture.loadAPI
-        mTextures.add(Texture.loadTextureFromApk("test.png",
-                                                 getAssets()));
+        //initial build build
+        text_bitmap   = Bitmap.createBitmap(200, 200, Config.ARGB_8888);
+        text_canvas   = new Canvas(bitmap);
+        
+        
+        //glyph shit
+        glyphin = new Glyphs(BitmapFactory.decodeResource(getResources(), R.drawable.glyphs_black));
+        glyphin.drawString(canvas, "The block is hot", 10, 10);
+        
+        //hopefully this guy shows up
+        mTextures.add(Texture.loadTextureFromBitmap(bitmap));
+
         mTextures.add(Texture.loadTextureFromApk("test2.png",
                                                  getAssets()));
         mTextures.add(Texture.loadTextureFromApk("TextureTeapotRed.png",
