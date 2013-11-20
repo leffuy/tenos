@@ -390,6 +390,7 @@ public class ImageTargets extends Activity
     private void loadTextures()
     {
         Bitmap bitmap = Bitmap.createBitmap(200, 200, Config.ARGB_8888);
+        mTextures.add(Texture.loadAPI
         mTextures.add(Texture.loadTextureFromApk("test.png",
                                                  getAssets()));
         mTextures.add(Texture.loadTextureFromApk("test2.png",
@@ -398,6 +399,23 @@ public class ImageTargets extends Activity
                 getAssets()));
     }
 
+
+    /** This is like the guy above, but is called during the frame update
+        if the target has changed from the last one currently in memory.
+    */
+    public void updateTextures()
+    {
+        //TODO add some variables to the activity to stored
+        //needed data 
+    }
+
+    private void fetchJson()
+    {
+
+    }
+
+    //this guy will take the current "room singleton" in the activity and 
+    //update him with the current 
 
     /** Configure QCAR with the desired version of OpenGL ES. */
     private int getInitializationFlags()

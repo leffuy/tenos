@@ -92,6 +92,8 @@ public class ImageTargetsRenderer implements GLSurfaceView.Renderer
 
         // Update render view (projection matrix and viewport) if needed:
         mActivity.updateRenderView();
+        //TODO: other updates and shit
+        //will go here
 
         // Call our native function to render content
         renderFrame();
