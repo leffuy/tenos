@@ -16,6 +16,7 @@ package com.qualcomm.QCARSamples.ImageTargets;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.Vector;
+import java.io.FileOutputStream;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -25,10 +26,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.Canvas;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
@@ -396,20 +401,41 @@ public class ImageTargets extends Activity
     {
         //initial build build
         text_bitmap   = Bitmap.createBitmap(200, 200, Config.ARGB_8888);
-        text_canvas   = new Canvas(bitmap);
+        text_canvas   = new Canvas(text_bitmap);
+        text_canvas.drawARGB( 255, 255, 255, 255 );
         
         
         //glyph shit
         glyphin = new Glyphs(BitmapFactory.decodeResource(getResources(), R.drawable.glyphs_black));
-        glyphin.drawString(canvas, "The block is hot", 10, 10);
+        glyphin.drawString(text_canvas, "Boom", 10, 10);
+
+        saveBitmapTester(text_bitmap);
         
         //hopefully this guy shows up
-        mTextures.add(Texture.loadTextureFromBitmap(bitmap));
+        mTextures.add(Texture.loadTextureFromBitmap(text_bitmap));
 
         mTextures.add(Texture.loadTextureFromApk("test2.png",
                                                  getAssets()));
         mTextures.add(Texture.loadTextureFromApk("TextureTeapotRed.png",
                 getAssets()));
+    }
+    
+    public void saveBitmapTester(Bitmap bm)
+    {
+        try
+        {
+            String mBaseFolderPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera/";
+            String mFilePath = mBaseFolderPath + "abcd.jpg";
+
+            FileOutputStream stream = new FileOutputStream(mFilePath);
+            bm.compress(CompressFormat.JPEG, 100, stream);
+            stream.flush();
+            stream.close();
+        }
+        catch(Exception e)
+        {
+            Log.e("Could not save", e.toString());
+        }
     }
 
 
@@ -1052,14 +1078,14 @@ public class ImageTargets extends Activity
                                 ).show();
                             dialog.dismiss();
                         }
-                        else if (item == itemSwitchDatasetIndex)
+                        /*else if (item == itemSwitchDatasetIndex)
                         {
 
-                            switchDatasetAsap();
-                            mIsStonesAndChipsDataSetActive = !mIsStonesAndChipsDataSetActive;
+                            //switchDatasetAsap();
+                            //mIsStonesAndChipsDataSetActive = !mIsStonesAndChipsDataSetActive;
 
                             dialog.dismiss();
-                        }
+                        }*/
 
                     }
                 });

@@ -475,6 +475,8 @@ Java_com_qualcomm_QCARSamples_ImageTargets_ImageTargetsRenderer_renderFrame(JNIE
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT,
                        (const GLvoid*) &planeIndices[0]);
 
+        //one plane two plane three plane four
+
         glVertexAttribPointer(vertexHandle, 3, GL_FLOAT, GL_FALSE, 0,
                               (const GLvoid*) &plane2Vertices[0]);
         glVertexAttribPointer(normalHandle, 3, GL_FLOAT, GL_FALSE, 0,
@@ -492,6 +494,8 @@ Java_com_qualcomm_QCARSamples_ImageTargets_ImageTargetsRenderer_renderFrame(JNIE
                            (GLfloat*)&modelViewProjection.data[0] );
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT,
                        (const GLvoid*) &plane2Indices[0]);
+        
+        //a function yoyo
 #endif
 
     }
@@ -506,6 +510,17 @@ Java_com_qualcomm_QCARSamples_ImageTargets_ImageTargetsRenderer_renderFrame(JNIE
 #endif
 
     QCAR::Renderer::getInstance().end();
+}
+
+//this thing will dynamically loop and create planes from the above vertex data
+
+//Future updates would include an interface to the geometry engine to provide
+//mesh suinterface to the
+
+void planeDataConfigurer()
+{
+
+
 }
 
 
